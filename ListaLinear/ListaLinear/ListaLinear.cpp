@@ -107,7 +107,7 @@ void buscarElemento()
 {
 
 	if (nElementos == 0) {
-		cout << " A lista esta vazia \n";
+		cout << " A lista esta vazia" << endl;
 		return;
 	}
 
@@ -117,16 +117,26 @@ void buscarElemento()
 	cin >> valor;
 
 	bool encontrado = false;
+	int contador = 0;
+	int posicao[MAX]{};;
 
 	for (int i = 0; i < nElementos; i++) {
 		if (lista[i] == valor) {
-			cout << "Elemento encontrado na posicao " << i << endl;
-			encontrado = true;
+			contador++;
+			posicao[i] = i;
 		}
+	}
 
-		if (!encontrado) {
-			cout << "Elemento não encontrado" << endl;
-		}
+	if (contador == 0) {
+		cout << "Elemento nao encontrado" << endl;
+	}
+
+	else if (contador == 1) {
+		encontrado = true;
+		cout << "Elemento encontrado na posicao " << posicao << endl;
+	} else {
+		encontrado = true;
+		cout << "Elemento encontrado nas posicoes " << posicao << " e " << posicao << endl;
 	}
 
 }
