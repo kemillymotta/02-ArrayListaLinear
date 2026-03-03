@@ -122,21 +122,26 @@ void buscarElemento()
 
 	for (int i = 0; i < nElementos; i++) {
 		if (lista[i] == valor) {
+			posicao[contador] = i;
 			contador++;
-			posicao[i] = i;
 		}
 	}
 
 	if (contador == 0) {
 		cout << "Elemento nao encontrado" << endl;
-	}
-
-	else if (contador == 1) {
+	} else if (contador == 1) {
 		encontrado = true;
-		cout << "Elemento encontrado na posicao " << posicao << endl;
+		cout << "Elemento encontrado na posicao " << posicao[0] + 1 << endl;
 	} else {
 		encontrado = true;
-		cout << "Elemento encontrado nas posicoes " << posicao << " e " << posicao << endl;
+		cout << "Elemento encontrado nas posicoes ";
+		for (int i = 0; i < contador - 1; i++) {
+			if (i < contador - 2)
+				cout << posicao[i] + 1 << ", ";
+			else
+				cout << posicao[i] + 1 << " e ";
+		}
+		cout << posicao[contador - 1] << endl;
 	}
 
 }
