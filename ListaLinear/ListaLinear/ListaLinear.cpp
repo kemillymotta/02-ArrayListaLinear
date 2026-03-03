@@ -106,4 +106,27 @@ void inserirElemento()
 void buscarElemento()
 {
 
+	if (nElementos == 0) {
+		cout << " A lista esta vazia \n";
+		return;
+	}
+
+	int valor;
+
+	cout << "Digite o elemento a buscar: " << endl;
+	cin >> valor;
+
+	bool encontrado = false;
+
+	for (int i = 0; i < nElementos; i++) {
+		if (lista[i] == valor) {
+			cout << "Elemento encontrado na posicao " << i << endl;
+			encontrado = true;
+		}
+
+		if (!encontrado) {
+			cout << "Elemento não encontrado" << endl;
+		}
+	}
+
 }
